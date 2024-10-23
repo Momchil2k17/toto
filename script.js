@@ -16,7 +16,6 @@ let buttons = [];
 
 // Initialize match statistics
 let matchStats = JSON.parse(localStorage.getItem('matchStats')) || Array(7).fill(0);
-
 // Generate number buttons in a table (7 numbers per row)
 let row;
 for (let i = 1; i <= 49; i++) {
@@ -178,3 +177,69 @@ window.addEventListener('click', (event) => {
         statsDisplay.style.display = 'none'; // Hide statistics display
     }
 });
+
+const run1000Button = document.getElementById('run-1000'); 
+const clearButton = document.getElementById('clear-button'); // Button to run 1000 simulations
+function clearStats() {
+    // Reset match statistics to all zeros
+    matchStats = Array(7).fill(0);
+    
+    // Update localStorage with cleared stats
+    localStorage.setItem('matchStats', JSON.stringify(matchStats));
+
+    // Optionally, hide the stats display or update it
+    statsDisplay.innerHTML = 'Statistics cleared!';
+    setTimeout(() => statsDisplay.style.display = 'none', 2000); // Hide the stats display after 2 seconds
+}
+
+// Attach event listener to clear stats button
+clearButton.addEventListener('click', () => {
+    clearStats();
+    alert("Statistics cleared!");
+});
+
+// Function to simulate the lottery game
+function runSimulation() {
+    // Automatically choose 6 random numbers
+    const selectedNumbers = [];
+    while (selectedNumbers.length < 6) {
+        const randomNum = Math.floor(Math.random() * 49) + 1;
+        if (!selectedNumbers.includes(randomNum)) {
+            selectedNumbers.push(randomNum);
+        }
+    }
+
+    // Generate 6 random lottery numbers
+    const lotteryNumbers = [];
+    while (lotteryNumbers.length < 6) {
+        const randomNum = Math.floor(Math.random() * 49) + 1;
+        if (!lotteryNumbers.includes(randomNum)) {
+            lotteryNumbers.push(randomNum);
+        }
+    }
+
+    const sortedLotteryNumbers = lotteryNumbers.sort((a, b) => a - b);
+    const matches = selectedNumbers.filter(num => sortedLotteryNumbers.includes(num));
+    const matchesCount = matches.length;
+
+    // Update match statistics
+    matchStats[matchesCount]++;
+}
+
+// Run the simulation 1000 times
+function run1000Simulations() {
+    for (let i = 0; i < 1000000; i++) {
+        runSimulation();
+    }
+
+    // Save the updated statistics to localStorage
+    localStorage.setItem('matchStats', JSON.stringify(matchStats));
+
+    // Show statistics after simulation
+}
+
+// Attach event listener to the run 1000 button
+run1000Button.addEventListener('click', () => {
+    run1000Simulations();
+});
+

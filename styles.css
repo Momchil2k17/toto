@@ -172,5 +172,17 @@ td {
     font-weight: normal;
     color: #007BFF; /* Change to a color for emphasis */
 }
+#new-game{
+    background-color: #ff9800;
+    color: white;
+    font-size: 18px;
+    padding: 12px 30px;
+    margin: 10px;  /* Adjusted margin */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
 
 
