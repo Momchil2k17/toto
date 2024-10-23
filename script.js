@@ -228,7 +228,7 @@ function runSimulation() {
 
 // Run the simulation 1000 times
 function run1000Simulations() {
-    for (let i = 0; i < 1000; i++) {
+    for (let i = 0; i < 1000000; i++) {
         runSimulation();
     }
 
