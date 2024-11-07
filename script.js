@@ -243,3 +243,6 @@ run1000Button.addEventListener('click', () => {
     run1000Simulations();
 });
 
+document.querySelector('.close-stats-button').addEventListener('click', function() {
+    document.getElementById('stats-display').style.display = 'none';
+});

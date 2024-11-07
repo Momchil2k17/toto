@@ -48,6 +48,7 @@ td {
     width: 60px;
     height: 60px;
     font-size: 18px;
+    text-align: center;  
     cursor: pointer;
     background-color: #ddd;
     border: 2px solid transparent;
@@ -149,6 +150,20 @@ td {
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+}
+.close-stats-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #aaa;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1100; /* Ensure it’s on top */
+}
+
+.close-stats-button:hover {
+    color: black;
 }
 
 #stats-display h2 {
