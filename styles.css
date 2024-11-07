@@ -16,7 +16,7 @@ h1 {
     color: white;
     font-size: 18px;
     padding: 12px 30px;
-    margin: 10px;  /* Adjusted margin */
+    margin: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -84,27 +84,26 @@ td {
     color: #ff5722;
     margin-top: 20px;
 }
-/* Add these styles to your existing CSS file */
 
+/* Modal styling */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%;
     border-radius: 10px;
     text-align: center;
 }
@@ -122,24 +121,25 @@ td {
     text-decoration: none;
     cursor: pointer;
 }
-/* Add these styles to your existing CSS file */
+
 #results-display {
     margin-top: 20px;
     font-weight: bold;
 }
-/* Add these styles to your existing CSS file */
+
 .match {
-    color: green;  /* Matches in green */
-    font-weight: bold; /* Make matched numbers bold */
+    color: green;
+    font-weight: bold;
 }
 
 .no-match {
-    color: red;  /* Non-matches in red */
-    text-decoration: line-through; /* Strikethrough non-matches */
+    color: red;
+    text-decoration: line-through;
 }
+
 /* Style for the statistics display */
 #stats-display {
-    display: none; /* Initially hidden */
+    display: none;
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 15px;
@@ -148,10 +148,9 @@ td {
     right: 50px;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000; /* Ensure it's above other content */
+    z-index: 1000;
 }
 
-/* Statistics item styling */
 #stats-display h2 {
     margin: 0;
     color: #333;
@@ -167,17 +166,17 @@ td {
     font-weight: bold;
 }
 
-/* Percentage styling */
 .percentage {
     font-weight: normal;
-    color: #007BFF; /* Change to a color for emphasis */
+    color: #007BFF;
 }
-#new-game{
+
+#new-game {
     background-color: #ff9800;
     color: white;
     font-size: 18px;
     padding: 12px 30px;
-    margin: 10px;  /* Adjusted margin */
+    margin: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -185,4 +184,53 @@ td {
     display: inline-block;
 }
 
+/* Responsive styling for screens under 700px */
+@media (max-width: 700px) {
+    body {
+        padding: 10px;
+    }
 
+    h1 {
+        font-size: 24px;
+    }
+    #controls{
+        padding: 10px;
+    }
+    .auto-button {
+        font-size: 16px;
+        padding: 10px 20px;
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    table {
+        width: 80%;
+        margin: 10px auto;
+        border-spacing: 1px;
+        padding: 10px;
+    }
+
+    .number-button {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    #selected-numbers, #sum {
+        font-size: 18px;
+    }
+
+    .modal-content {
+        width: 80%;
+        margin: 10% auto;
+        padding: 15px;
+    }
+
+    #stats-display {
+        width: 80%;
+        padding: 10px;
+        top: 20px;
+        right: auto;
+        left: 5%;
+    }
+}
